@@ -508,21 +508,37 @@ https://github.com/chazgiese/EmojiGen
                     $(".card").each(function(i, el){
                             $(el).click();
                     });
+
                 }, 400);
 
-                setTimeout(function(){
-                    console.log(
-                        "that's funny"
-                    )
-                    $(".card").each(function(i, el){
+                pickAPrimeNumberToWaitThatManySecondsForAndCallYourselfAgain()
+
+                function pickAPrimeNumberToWaitThatManySecondsForAndCallYourselfAgain(){
+                    
+                    var randomPrime = primes[Math.floor(Math.random()* primes.length)]
+                    
+                    setTimeout(function() {
+                    $(".back").each(function(i, el){
                             $(el).click();
                     });
-                    $(".card").each(function(i, el){
+
+                     }, randomPrime*1000);
+
+                    setTimeout(function() {
+                    $(".front").each(function(i, el){
                             $(el).click();
                     });
-                },1300);
+
+                     }, (randomPrime+1)*1000);
+
+
+                    setTimeout(pickAPrimeNumberToWaitThatManySecondsForAndCallYourselfAgain, (randomPrime+2)*1000)
+                    
+                }
              
             });
+
+            var primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31];
         </script>     
     </head>
     <body>
