@@ -76,7 +76,7 @@ div{
     and their excellent github account:
 https://github.com/chazgiese/EmojiGen
 -->        
-        <script>var emojiBook = [
+        <script>var dealt=[];var emojiBook = [
                 "&#x1F600;", "&#x1F62C;", "&#x1F601;", "&#x1F602;", "&#x1F603;",
                 "&#x1F604;", "&#x1F605;", "&#x1F606;", "&#x1F607;", "&#x1F609;",
                 "&#x1F60A;", "&#x1F642;", "&#x1F643;", "&#x263A;&#xFE0F;", "&#x1F60B;",
@@ -471,10 +471,15 @@ https://github.com/chazgiese/EmojiGen
               var getEmoji = {
                randomEmoji: function() {
                    if(emojiBook.length > 955){
-                        emojiBook.pop();
-                        emojiBook.pop();
-                        emojiBook.pop();
+                        dealt.unshift(emojiBook.pop());
+                        dealt.unshift(emojiBook.pop());
+                        dealt.unshift(emojiBook.pop());
                    }
+                   else if(emojiBook.length < 4){
+                    emojiBook = emojiBook.concat(dealt);
+                    dealt= [];
+                   }
+
 
                  var randomNumber = Math.floor(Math.random() * emojiBook.length);
                  
@@ -508,7 +513,9 @@ https://github.com/chazgiese/EmojiGen
                 $(".card").flip();
 
                 $(".front").click(function(){
-                    $(this).parent().children('.back').html(getEmoji.randomEmoji())
+                    var curr = getEmoji.randomEmoji();
+                    dealt.unshift(curr);
+                    $(this).parent().children('.back').html(curr);
                 });
 
                 setTimeout(function() {
