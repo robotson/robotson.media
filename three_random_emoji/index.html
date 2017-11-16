@@ -33,6 +33,7 @@ div{
                 padding-right: 0;
                 padding-top: 12px;
                 width: 100vw;
+                font-family: sans-serif;
             }
         div.card{
             width: 29vw;
@@ -46,13 +47,15 @@ div{
             
         }
         div.front{
-
-
+            padding-top: 36%;
+            color: white;
             display: inline-block;
             background:black;
             border: dotted white 5px;
             /* font-size: 25vw; */
             text-align: center;
+            box-sizing: border-box;
+            font-size: larger;
             }
         div.back{
 
@@ -470,6 +473,7 @@ div{
                     div.className += "card";
                     var front = document.createElement("div");
                     front.className += "front";
+                    front.innerText = "?";
                     var back = document.createElement("div");
                     back.className += "back";
                     back.innerHTML = getEmoji.randomEmoji();
