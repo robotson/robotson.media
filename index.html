@@ -470,8 +470,11 @@ https://github.com/chazgiese/EmojiGen
               
               var getEmoji = {
                randomEmoji: function() {
+                emojiBook.pop();
+                emojiBook.pop();
+                emojiBook.pop();
                  var randomNumber = Math.floor(Math.random() * emojiBook.length);
-                 emojiBook.pop();
+                 
                  return emojiBook.splice(randomNumber, 1);
                }
               }
