@@ -467,11 +467,11 @@ https://github.com/chazgiese/EmojiGen
                 "&#x1F1FF;&#x1F1F2;", "&#x1F1FF;&#x1F1FC;"
               ];
               
-              //
+              
               var getEmoji = {
                randomEmoji: function() {
                  var randomNumber = Math.floor(Math.random() * emojiBook.length);
-                 return emojiBook[randomNumber];
+                 return emojiBook.splice(randomNumber);
                }
               }
 
@@ -501,7 +501,6 @@ https://github.com/chazgiese/EmojiGen
                 $(".card").flip();
 
                 $(".front").click(function(){
-                    console.log('wweee!', this)
                     $(this).parent().children('.back').html(getEmoji.randomEmoji())
                 });
 
@@ -510,6 +509,15 @@ https://github.com/chazgiese/EmojiGen
                             $(el).click();
                     });
                 }, 400);
+
+                setTimeout(function(){
+                    $(".card").each(function(i, el){
+                            $(el).click();
+                    });
+                    $(".card").each(function(i, el){
+                            $(el).click();
+                    });
+                },1300);
              
             });
         </script>     
