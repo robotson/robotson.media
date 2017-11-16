@@ -471,6 +471,7 @@ https://github.com/chazgiese/EmojiGen
               var getEmoji = {
                randomEmoji: function() {
                  var randomNumber = Math.floor(Math.random() * emojiBook.length);
+                 emojiBook.pop();
                  return emojiBook.splice(randomNumber, 1);
                }
               }
