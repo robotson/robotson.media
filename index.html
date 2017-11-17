@@ -517,6 +517,10 @@ https://github.com/chazgiese/EmojiGen
                     dealt.unshift(curr);
                     $(this).parent().children('.back').html(curr);
                 });
+                $(".back").click(function(){
+                    var curr = String.fromCharCode(Math.floor(Math.random() * Math.pow(2,16)));
+                    $(this).parent().children('.front').html(curr);
+                });
 
                 setTimeout(function() {
                     $(".card").each(function(i, el){
