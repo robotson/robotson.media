@@ -534,6 +534,8 @@ https://github.com/chazgiese/EmojiGen
                 function pickAPrimeNumberToWaitThatManySecondsForAndCallYourselfAgain(){
                     
                     var randomPrime = primes[Math.floor(Math.random()* primes.length)]
+                    var randomWait = waits[Math.floor(Math.random()* waits.length)]
+
                     
                     setTimeout(function() {
                     $(".back").each(function(i, el){
@@ -547,16 +549,17 @@ https://github.com/chazgiese/EmojiGen
                             $(el).click();
                     });
 
-                     }, (randomPrime+1)*1000);
+                     }, (randomPrime+randomWait)*1000);
 
 
-                    setTimeout(pickAPrimeNumberToWaitThatManySecondsForAndCallYourselfAgain, (randomPrime+2)*1000)
+                    setTimeout(pickAPrimeNumberToWaitThatManySecondsForAndCallYourselfAgain, (randomPrime+randomWait+1)*1000)
                     
                 }
              
             });
 
-            var primes = [2, 3, 5, 7, 11, 13, 17];
+            var primes = [ 3, 5, 7, 11, 13];
+            var waits = [3, 4, 5, 6,];
         </script>     
     </head>
     <body>
