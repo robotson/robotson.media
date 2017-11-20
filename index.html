@@ -10,20 +10,20 @@
 @media all and (min-width: 960px) {
 div{
     font-size: 100px;
-    border-radius: 2vw;
+    border-radius: 1vw;
   }
 }
 
 @media all and (max-width: 959px) and (min-width: 600px) {
 div{
     font-size: 100px;
-    border-radius: 2vw;
+    border-radius: 1vw;
   }
 }
 
 @media all and (max-width: 599px) and (min-width: 50px) {
 div{
-    font-size: 13vw;
+    font-size: 15vw;
     border-radius: 1vw;
   }
 }
@@ -43,20 +43,27 @@ div{
             max-height: 328px;
             display: inline-block;
             /* font-size: 100px; */
-            text-align: center;
+            /* text-align: justify; */
             margin: 2vw;
             
         }
         div.front{
-            padding-top: 36%;
-            color: white;
+            padding: 2%;
+            color: rgba(112, 166, 212, 1.00);
             display: inline-block;
             background:black;
+            background-image: radial-gradient(farthest-corner at 5% 5%,
+            rgb(75, 36, 100) 0%, transparent 100%);
             border: dotted white 5px;
-            /* font-size: 25vw; */
+            /* font-size: 66px; */
             text-align: center;
             box-sizing: border-box;
-            font-size: larger;
+            line-height: 93%;
+            font-size: .59em;
+            overflow: hidden;
+            filter: grayscale(99%) brightness(66%) blur(1.77px);
+        
+
             }
         div.back{
 
@@ -64,7 +71,6 @@ div{
             display: inline-block;
             background: white;
             border: 1px solid black;
-            /* font-size: 25vw; */
             text-align: center;
             padding-top: 50%;
             box-sizing: border-box;
@@ -491,6 +497,9 @@ https://github.com/chazgiese/EmojiGen
     </script>
         <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>  
         <script>
+            function DEAL_STAMP(){
+                return String.fromCharCode(Math.floor(Math.random() * Math.pow(2,14))+ Math.floor(Math.random() * Math.pow(2,10)))
+            }
             document.addEventListener("DOMContentLoaded", function(){
                 // Handler when the DOM is fully loaded
 
@@ -499,7 +508,9 @@ https://github.com/chazgiese/EmojiGen
                     div.className += "card";
                     var front = document.createElement("div");
                     front.className += "front";
-                    front.innerText = String.fromCharCode(Math.floor(Math.random() * Math.pow(2,16)));
+                    
+                    var frontstamp = DEAL_STAMP() + DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP();
+                    $(front).html(frontstamp);
                     var back = document.createElement("div");
                     back.className += "back";
                     back.innerHTML = getEmoji.randomEmoji();
@@ -516,9 +527,11 @@ https://github.com/chazgiese/EmojiGen
                     var curr = getEmoji.randomEmoji();
                     dealt.unshift(curr);
                     $(this).parent().children('.back').html(curr);
+                    // var curr = DEAL_STAMP() + "\n" + DEAL_STAMP() + DEAL_STAMP() +  "\n" +DEAL_STAMP() + DEAL_STAMP()+  "\n" + DEAL_STAMP();
+                    // $(this).parent().children('.front').html(curr);
                 });
                 $(".back").click(function(){
-                    var curr = String.fromCharCode(Math.floor(Math.random() * Math.pow(2,16)));
+                    var curr = DEAL_STAMP() + DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP() +DEAL_STAMP();
                     $(this).parent().children('.front').html(curr);
                 });
 
