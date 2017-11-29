@@ -6,11 +6,11 @@
 
 @media all and (min-width: 1900px) {
     div{
-        font-size: 101px;
+        font-size: 100px;
         border-radius: .2em;
     }
     body{
-        transform: scale(1.8, 1.8);
+        /* transform: scale(1.8, 1.8); */
         padding-top: 6vw;
     }
 } 
@@ -18,34 +18,34 @@
 @media all and (max-width: 1899px) and (min-width: 1400px)  {
 
     div{
-        font-size: 101px;
+        font-size: 100px;
         border-radius: .2em;
     }
     body{
-        transform: scale(1.5, 1.5);
+        /* transform: scale(1.5, 1.5); */
         padding-top: 4vw;
     }
 }
 
 @media all and (max-width: 1399px) and (min-width: 960px) {
 div{
-    font-size: 101px;
+    font-size: 100px;
     border-radius: .2em;
 
   }
   body{
-    transform: scale(1.3, 1.3);
+    /* transform: scale(1.3, 1.3); */
     padding-top: 4vw;
   }
 }
 
 @media all and (max-width: 959px) and (min-width: 600px) {
 div{
-    font-size: 101px;
+    font-size: 100px;
     border-radius:  .2em;
   }
   body{
-    transform: scale(1,1);
+    /* transform: scale(1,1); */
     padding-top: 4vw;
     }
 
@@ -58,8 +58,8 @@ div{
   }
   body{
     transform: scale(0.8, 0.8);
-    margin: -1px;
-    padding-top: 0vw;
+    margin: -3px;
+    padding-top: 0;
 }
 
 }
@@ -94,7 +94,10 @@ div{
             background:rgba(0, 238, 255, 0.397);
             background-image: radial-gradient(farthest-corner at 50% 42%,
             rgb(75, 36, 100) 0%, transparent 100%);
-            border: solid rgb(112, 167, 212) 2px;
+            border-color: rgb(112, 167, 212);
+            border-width: .08em .1em .08em .1em;
+            border-style: double ;
+            /* outline:  rgb(0, 0, 0) .07em; */
             /* font-size: 66px; */
             text-align: center;
             box-sizing: border-box;
@@ -110,20 +113,21 @@ div{
 
 
             display: inline-block;
-            background: rgba(160, 141, 173, 0.61);
+            background: rgba(79, 69, 80, 0.789);
             background-image: radial-gradient(farthest-corner at 50% 50%,
-             rgba(0, 0, 0, 0.644) 0%,rgba(255, 255, 255, 0.11) 100%);
-            border: 1px dotted rgba(0, 0, 0, 0.548);
+            rgba(177, 159, 232, 0.666) 0%, rgba(183, 168, 206, 0.899) 10%, rgba(156, 149, 193, 0.7) 45%, rgba(48, 33, 60, 0.644) 100%);
+            border: 1px dotted rgba(255, 255, 255, 0.548);
             text-align: center;
             padding-top: 50%;
             box-sizing: border-box;
 
             background-clip: text;
 
-            text-shadow: rgba(255, 255, 255, 0.274) 0.1vh 0.4vh,  rgba(0, 0, 0, 1) -.1vh -.2vh 0.1vh;
-            color: rgba(0, 0, 0, 0.644);
-            filter: invert(100%) hue-rotate(180deg) brightness(80%) contrast(170%) grayscale(0%);
+            text-shadow:rgba(0, 0, 0, 0.2)  -0.2vh -0.2vh .1vh,  rgba(255, 255, 255, .2) 0.2vh 0.2vh .1vh, rgba(0, 0, 0, .3)  -1px -1px , rgba(0, 0, 0, .5)  1px 1px, rgba(0, 0, 0, .5)  -1px 1px , rgba(0, 0, 0, .7)  1px -1px, rgb(10, 7, 12)  0px 5px 15px;
+            color: rgba(0, 0, 0, 0.7644);
+            filter:  contrast(130%) grayscale(0%); 
             }
+          
         </style>
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 
@@ -536,7 +540,12 @@ https://github.com/chazgiese/EmojiGen
                    }
 
 
-                 var randomNumber = Math.floor(Math.random() * emojiBook.length);
+                   
+
+
+
+
+                 var randomNumber = window.crypto.getRandomValues(new Uint32Array(1))[0] % emojiBook.length;
                  
                  return emojiBook.splice(randomNumber, 1);
                }
@@ -547,7 +556,8 @@ https://github.com/chazgiese/EmojiGen
         <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>  
         <script>
             function DEAL_STAMP(){
-                return String.fromCharCode(Math.floor(Math.random() * Math.pow(2,14))+ Math.floor(Math.random() * Math.pow(2,10)))
+                console.log(window.crypto.getRandomValues(new Uint32Array(1))[0] % Math.pow(2, 17))
+                return String.fromCharCode(window.crypto.getRandomValues(new Uint32Array(1))[0] % Math.pow(2, 17));
             }
             document.addEventListener("DOMContentLoaded", function(){
                 // Handler when the DOM is fully loaded
@@ -595,8 +605,8 @@ https://github.com/chazgiese/EmojiGen
 
                 function pickAPrimeNumberToWaitThatManySecondsForAndCallYourselfAgain(){
                     
-                    var randomPrime = primes[Math.floor(Math.random()* primes.length)]
-                    var randomWait = waits[Math.floor(Math.random()* waits.length)]
+                    var randomPrime = primes[Math.floor(window.crypto.getRandomValues(new Uint32Array(1))[0] % primes.length)]
+                    var randomWait = waits[Math.floor(window.crypto.getRandomValues(new Uint32Array(1))[0] %  waits.length)];
 
                     
                     setTimeout(function() {
@@ -620,8 +630,8 @@ https://github.com/chazgiese/EmojiGen
              
             });
 
-            var primes = [ 3, 5, 7, 11, 13];
-            var waits = [3, 4, 5, 6,];
+            var primes = [5, 7, 11, 13];
+            var waits = [3, 5, 7, 11, 13, 17];
         </script>     
     </head>
     <body>
