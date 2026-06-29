@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Avatar in Chief — Lance Robertson</title>
+    <meta name="description" content="The Avatar in Chief — a synthetic 60 Minutes news piece set in 2037. Written, directed, and produced by Lance Robertson.">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="video.other">
+    <meta property="og:title" content="The Avatar in Chief">
+    <meta property="og:description" content="A synthetic 60 Minutes news piece set in 2037, profiling the rise of a new use of AI in politics.">
+    <meta property="og:url" content="https://robotson.media/work/avatar-in-chief/">
+    <!-- SWAP POSTER (og:image): point this at the committed poster once available, e.g. https://robotson.media/work/avatar-in-chief/poster.jpg -->
+    <!-- <meta property="og:image" content="https://robotson.media/work/avatar-in-chief/poster.jpg"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --ground: #0a0b0d;       /* near-black, cold */
+            --panel:  #101216;
+            --hair:   #23272e;       /* hairline rules */
+            --text:   #e7e9ec;       /* cold off-white */
+            --muted:  #9aa1ab;       /* secondary text */
+            --faint:  #6b727c;       /* labels / captions */
+            --cold:   #8fa0b3;       /* restrained cold-light accent */
+            --measure: 68ch;         /* reading measure */
+        }
+
+        * { box-sizing: border-box; }
+
+        html { -webkit-text-size-adjust: 100%; }
+
+        body {
+            margin: 0;
+            background-color: var(--ground);
+            color: var(--text);
+            font-family: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            font-weight: 400;
+            line-height: 1.72;
+            font-size: 1.0625rem;
+            letter-spacing: 0.01em;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .wrap {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            padding: 5.5rem 0 1rem;
+            text-align: center;
+        }
+
+        .poster {
+            margin: 0 auto 3.25rem;
+            max-width: 460px;
+        }
+
+        .poster__img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--hair);
+            background: var(--panel);
+        }
+
+        .poster__cap {
+            margin-top: 0.85rem;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--faint);
+        }
+
+        h1.title {
+            font-weight: 700;
+            font-size: clamp(2.1rem, 6.5vw, 3.5rem);
+            line-height: 1.04;
+            letter-spacing: -0.01em;
+            margin: 0;
+            text-wrap: balance;
+        }
+
+        /* ---------- Title block / metadata ---------- */
+        .meta {
+            margin: 1.4rem 0 0;
+            font-size: 0.84rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--cold);
+        }
+
+        /* ---------- Video ---------- */
+        .video {
+            margin: 4rem 0 1rem;
+            position: relative;
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            background: #000;
+            border: 1px solid var(--hair);
+        }
+
+        .video__frame {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ---------- Sections ---------- */
+        section.block {
+            padding: 3.5rem 0;
+            border-top: 1px solid var(--hair);
+            scroll-margin-top: 2rem;
+        }
+
+        section.block:first-of-type { border-top: none; }
+
+        .eyebrow {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--faint);
+            margin: 0 0 1.4rem;
+        }
+
+        .prose {
+            max-width: var(--measure);
+        }
+
+        .prose p {
+            margin: 0 0 1.25rem;
+        }
+
+        .prose p:last-child { margin-bottom: 0; }
+
+        .lede {
+            font-size: 1.18rem;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        em { font-style: italic; }
+
+        /* ---------- Colophon ---------- */
+        .colophon {
+            border-top: 1px solid var(--hair);
+            padding: 2.5rem 0 5rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            color: var(--faint);
+        }
+
+        .colophon a, .meta a { color: inherit; }
+
+        /* ---------- Mobile ---------- */
+        @media (max-width: 600px) {
+            .hero { padding-top: 3.5rem; }
+            .poster { max-width: 300px; margin-bottom: 2.5rem; }
+            body { font-size: 1rem; }
+            section.block { padding: 2.75rem 0; }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            html { scroll-behavior: smooth; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="wrap">
+
+        <!-- ======================= HERO ======================= -->
+        <header class="hero">
+            <figure class="poster">
+                <!-- SWAP POSTER: when Lance commits the festival poster (austere datacenter version),
+                     replace the <svg> placeholder below with:
+                     <img src="poster.jpg" alt="The Avatar in Chief poster" class="poster__img">
+                     Also uncomment the og:image meta tag in <head>. -->
+                <svg class="poster__img" viewBox="0 0 460 600" role="img"
+                     aria-label="The Avatar in Chief poster placeholder" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="460" height="600" fill="#101216"/>
+                    <rect x="0.5" y="0.5" width="459" height="599" fill="none" stroke="#23272e"/>
+                    <line x1="60" y1="300" x2="400" y2="300" stroke="#23272e" stroke-width="1"/>
+                    <text x="230" y="285" text-anchor="middle" fill="#6b727c"
+                          font-family="Archivo, sans-serif" font-size="15"
+                          letter-spacing="6" text-transform="uppercase">POSTER</text>
+                    <text x="230" y="330" text-anchor="middle" fill="#4d535b"
+                          font-family="Archivo, sans-serif" font-size="11" letter-spacing="2">placeholder</text>
+                </svg>
+                <figcaption class="poster__cap">Poster placeholder — final festival poster pending</figcaption>
+            </figure>
+
+            <h1 class="title">The Avatar in Chief</h1>
+
+            <!-- Title-block metadata. RUNTIME pending Lance's exact confirm (records show cut ends ~6:17). -->
+            <p class="meta">2037 · synthetic media · 6 min 20 sec</p>
+        </header>
+
+        <!-- ======================= VIDEO ======================= -->
+        <!-- SWAP VIDEO: replace the YouTube nocookie embed below with the final Vimeo embed when Lance provides it
+             (festival-preferred). Current source is a placeholder: https://www.youtube.com/watch?v=irmmK9G__ZA
+             The page remains fully readable if this embed is blocked or fails to load. -->
+        <div class="video">
+            <iframe class="video__frame"
+                    src="https://www.youtube-nocookie.com/embed/irmmK9G__ZA"
+                    title="The Avatar in Chief — video"
+                    loading="lazy"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+        </div>
+
+        <!-- ======================= SYNOPSIS ======================= -->
+        <section class="block" id="synopsis">
+            <p class="eyebrow">Synopsis</p>
+            <div class="prose">
+                <p class="lede">The Avatar in Chief is a synthetic <em>60 Minutes</em> news piece set in 2037, profiling the rise of a new use of AI in politics. In this near future, campaigning and governing merge into one interactive AI Avatar of the candidate, who leverages a parasocial relationship with voters to respond to their concerns like never before.</p>
+            </div>
+        </section>
+
+        <!-- ======================= DIRECTOR'S STATEMENT ======================= -->
+        <section class="block" id="statement">
+            <p class="eyebrow">Director's Statement</p>
+            <div class="prose">
+                <p>The Avatar in Chief is a speculative news piece: a segment from Volume 70 of <em>60 Minutes</em>, airing in 2037, in which a correspondent files a story on a U.S. president and the synthetic AI avatar she deployed first as a campaign tool, then as a mode of democratic representation. It uses the genre tropes of the prestige news-magazine format to dramatize one possible future — a world where AI is so normalized that its presence in the presidency is newsworthy, but only barely. While I was making it, the real <em>60 Minutes</em> underwent its own crisis of legitimacy under new leadership; the trusted format I was forging was losing its trustworthiness in real time, which gave the project an unexpected urgency.</p>
+                <p>My goal was to explore a world after the legitimacy debate is over — where we have stopped arguing about whether these tools should exist and started mapping the futures they enable. The piece works by borrowing the credibility of a trusted format to smuggle in a radical change, normalized as barely newsworthy. To build it I mixed fully synthesized characters, settings, and scenes with real archival footage, and where the footage I needed didn't exist, I synthesized it — a recreation of an FDR speech that was delivered but never recorded, a lost Instagram Live that I rebuilt from screenshots. Even parts of the documentary past, here, are partly generative.</p>
+                <p>The work's disclosure relies on its future date to mark it as fiction. I had hoped the uncanny faces and upscaling artifacts might work as a second layer of disclosure — a generative sheen that plays into the argument — but experience tells me audiences forgive or simply fail to register those tells. I know that putting words in the mouths of public figures is a fraught position. I hope the debate the piece provokes justifies the borrowing of credibility it performs.</p>
+            </div>
+        </section>
+
+        <!-- ======================= BIOGRAPHY ======================= -->
+        <section class="block" id="bio">
+            <p class="eyebrow">Biography</p>
+            <div class="prose">
+                <p>Lance Robertson is a poet, technologist, and critical futurist working in synthetic media and speculative design. Over two decades, he has moved from spoken-word poetry to software development and media theory. He hosts the podcast <em>Neomania</em>, a series of conversations on technology and the future. He studies speculative design at the University of California, San Diego, and lives and works in San Diego, California.</p>
+            </div>
+        </section>
+
+        <!-- Filmography (#filmography) intentionally omitted — Lance has not supplied a list. Do not fabricate. -->
+
+        <!-- ======================= COLOPHON ======================= -->
+        <footer class="colophon">
+            The Avatar in Chief — written, directed, and produced by Lance Robertson, 2026.
+        </footer>
+
+    </main>
+
+</body>
+</html>
