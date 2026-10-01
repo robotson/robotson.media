@@ -1,6 +1,6 @@
 {
   "application_type": "native",
-  "client_id": "https://robotson.media/tender-oauth-client-2.json",
+  "client_id": "https://robotson.media/tender-oauth-client.json",
   "client_name": "Tender (via Muse)",
   "client_uri": "https://robotson.media/",
   "dpop_bound_access_tokens": true,
