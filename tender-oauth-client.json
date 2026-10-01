@@ -1,1 +1,20 @@
-{"application_type":"web","client_id":"https://robotson.media/tender-oauth-client.json","client_name":"Tender (via Muse)","client_uri":"https://robotson.media/","dpop_bound_access_tokens":true,"grant_types":["authorization_code","refresh_token"],"redirect_uris":["https://agent.meta.ai/api/hatch/oauth/callback","http://127.0.0.1:8080/callback"],"response_types":["code"],"scope":"atproto","token_endpoint_auth_method":"none"}
+{
+  "application_type": "native",
+  "client_id": "https://robotson.media/tender-oauth-client-2.json",
+  "client_name": "Tender (via Muse)",
+  "client_uri": "https://robotson.media/",
+  "dpop_bound_access_tokens": true,
+  "grant_types": [
+    "authorization_code",
+    "refresh_token"
+  ],
+  "redirect_uris": [
+    "https://agent.meta.ai/api/hatch/oauth/callback",
+    "http://127.0.0.1:8080/callback"
+  ],
+  "response_types": [
+    "code"
+  ],
+  "scope": "atproto",
+  "token_endpoint_auth_method": "none"
+}
