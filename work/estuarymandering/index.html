@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Estuarymandering — Lance Robertson</title>
+    <meta name="description" content="Estuarymandering: The United Subbasins of America. A speculative map of the United States as 2,456 watershed districts, by Lance Robertson.">
+    <meta property="og:title" content="Estuarymandering: The United Subbasins of America">
+    <meta property="og:description" content="Estuarymandering: The United Subbasins of America. A speculative map of the United States as 2,456 watershed districts, by Lance Robertson.">
+    <meta property="og:url" content="https://robotson.media/work/estuarymandering/">
+    <meta property="og:image" content="https://robotson.media/work/estuarymandering/og.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/work.css">
+</head>
+<body>
+<main class="wrap">
+
+    <nav class="crumbs"><a href="/">robotson.media</a> / <a href="/work/">work</a> / estuarymandering</nav>
+
+    <header class="hero">
+        <h1 class="title">Estuarymandering</h1>
+        <p class="meta">2026 · speculative cartography · code</p>
+    </header>
+
+    <figure class="figure">
+        <a href="map.jpg"><img src="map.jpg" alt="The United Subbasins of America: a map of the United States divided into 2,456 HUC8 watershed subbasins, colored by hydrologic region." width="2400" height="1569"></a>
+        <figcaption>The United Subbasins of America</figcaption>
+    </figure>
+
+    <section class="block" id="about">
+        <p class="eyebrow">About</p>
+        <div class="prose">
+            <p class="lede">The United States as 2,456 HUC8 watershed districts, colored by hydrologic region. Gerrymandering’s opposite: districts drawn by rivers instead of incumbents.</p>
+            <p>Taken literally it is unworkable: an empty desert basin shouldn’t out-vote a dense city. But that is the negotiation the map wants to start, and representation for the water itself is the opening bid.</p>
+            <p>Made for VIS 102 (Teddy Cruz), UC San Diego, Spring 2026.</p>
+        </div>
+    </section>
+
+    <section class="block" id="process">
+        <p class="eyebrow">Process and tools</p>
+        <div class="prose">
+            <p>Generated in Python (geopandas, matplotlib) from the USGS Watershed Boundary Dataset, queried live from The National Map. The whole map is reproducible from a Makefile, and the code is open so anyone can swap the HUC level, recolor it, or draw their own subbasin republic.</p>
+        </div>
+        <ul class="links">
+            <li><a href="https://github.com/robotson/estuarymandering">Code on GitHub</a></li>
+            <li><a href="map.jpg">View the map</a></li>
+        </ul>
+    </section>
+
+    <footer class="colophon">Lance Robertson · <a href="/work/">Work</a> · <a href="/cv/">CV</a></footer>
+</main>
+</body>
+</html>
